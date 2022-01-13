@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        var serverPrice = parseInt(document.getElementById("price").innerText); // initial price
+        var checks = document.querySelectorAll("input[id^=service]"); // all id="service..." boxes
+        for (var i = 0; i < checks.length; i++) {
+            checks[i].onclick = function () {
+                var services = [], total = 0;
+                for (var i = 0; i < checks.length; i++) { // again we loop
+                    if (checks[i].checked) { // a ternary is no longer useful
+                        total += +checks[i].value;
+                        services.push(document.querySelector("[for=" + checks[i].id + "]").innerHTML); // get the label text
+                    }
+                }
+                document.getElementById("price").innerText = (serverPrice + total) + "€";
+                document.getElementById("display_services").innerHTML = "services: " + services.join(", ");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form id="services" name="services-form" data-name="services Form">
+        <div class="checkbox-field w-checkbox"><input type="checkbox" value="22500" id="service_1" name="checkbox"
+                data-name="Checkbox" class="checkbox 1 w-checkbox-input"><label for="service_1"
+                class="simple-text white w-form-label">design pack</label> 22500 €</div>
+        <div class="checkbox-field ew w-checkbox"><input type="checkbox" value="2000 " id="service_2" name="checkbox-2"
+                data-name="service_2" class="checkbox 2 w-checkbox-input"><label for="service_2"
+                class="simple-text white w-form-label">security</label> 2000 €</div>
+        <div class="checkbox-field 2 w-checkbox"><input type="checkbox" value="5000" id="service_3" name="checkbox-2"
+                data-name="service_3" class="checkbox 3 w-checkbox-input"><label for="service_3"
+                class="simple-text white w-form-label">wellness pack</label> 5000 €</div>
+        <div class="checkbox-field 4 w-checkbox"><input type="checkbox" value="1000" id="service_4" name="checkbox-2"
+                data-name="service_4" class="checkbox 4 w-checkbox-input"><label for="service_4"
+                class="simple-text white w-form-label">box auto</label> 1000 €</div>
+    </form>
+
+    <div class="paragraph" id="price">
+        200 €</div>
+    <div id="display_services" class="simple-text maiusc prova">services:<br>design pack<br>dynamically adding the
+        services...</div>
+</body>
+
+</html>

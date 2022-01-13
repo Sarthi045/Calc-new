@@ -1,0 +1,17 @@
+.heading{
+    background-color:blue;
+    text-align: center;
+    padding: 5px;
+    color: white;
+}
+.pricing{
+    border: 1px solid black;  
+    font-size: large;  
+}
+.update{
+    border: 1px solid black;    
+}
+.pizza {
+    border: 2px solid brown;
+    
+}

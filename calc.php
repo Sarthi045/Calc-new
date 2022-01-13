@@ -38,7 +38,7 @@
     ?>
 
     <div class="heading text-center">
-        <h2>Fast Food Service </h2>
+        <h2>The Fast Food Service </h2>
     </div>
 
     <div class="container p-5">

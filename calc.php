@@ -33,9 +33,7 @@
 
 <body>
 
-    <?php
-
-    ?>
+    
 
     <div class="heading text-center">
         <h2>The Fast Food Service </h2>
